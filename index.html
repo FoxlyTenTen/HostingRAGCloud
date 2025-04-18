@@ -1,65 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bakti AI Assistant</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TestingAgent2 Chatbot</title>
 
-    <!-- Dialogflow Messenger Web Component -->
-    <link
-      rel="stylesheet"
-      href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css"
-    />
-  </head>
-  <body style="margin: 0; padding: 0; background-color: #f3f6fc; font-family: 'Poppins', sans-serif; height: 100vh;">
+  <!-- Dialogflow Chatbot CSS -->
+  <link rel="stylesheet"
+    href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+  
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #f3f6fc;
+      font-family: 'Google Sans', sans-serif;
+    }
 
-    <!-- Dialogflow Messenger Component -->
-    <df-messenger
-      project-id="testingrag-455714"
-      agent-id="a4cba14c-f32b-4331-a730-6724fffa2ba3"
-      language-code="en"
-      max-query-length="-1">
-      <df-messenger-chat chat-title="Bakti Assistant"></df-messenger-chat>
-    </df-messenger>
+    df-messenger {
+      z-index: 999;
+      position: fixed;
 
-    <!-- Style: Bakti Themed -->
-    <style>
+      /* Your theme */
+      --df-messenger-font-color: #000;
+      --df-messenger-font-family: Google Sans;
+      --df-messenger-chat-background: #f3f6fc;
+      --df-messenger-message-user-background: #d3e3fd;
+      --df-messenger-message-bot-background: #fff;
+
+      bottom: 0;
+      right: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Optional mobile support */
+    @media screen and (max-width: 480px) {
       df-messenger {
-        z-index: 999;
-        position: fixed;
-
-        --df-messenger-font-color: #000;
-        --df-messenger-font-family: 'Poppins', sans-serif;
-        --df-messenger-chat-background: #f3f6fc;
-        --df-messenger-message-user-background: #d3e3fd;
-        --df-messenger-message-bot-background: #ffffff;
-        --df-messenger-send-icon: #4285f4;
-        --df-messenger-button-titlebar-color: #4285f4;
-        --df-messenger-chip-border-color: #4285f4;
-        --df-messenger-chip-font-color: #4285f4;
-        --df-messenger-input-box-color: #ffffff;
-        --df-messenger-input-placeholder-font-color: #aaa;
-
-        bottom: 0;
-        right: 0;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        --df-messenger-font-size: 14px;
       }
+    }
+  </style>
+</head>
 
-      body, html {
-        height: 100%;
-      }
+<body>
+  <!-- Dialogflow Messenger Component -->
+  <df-messenger
+    project-id="testingrag-455714"
+    agent-id="a4cba14c-f32b-4331-a730-6724fffa2ba3"
+    language-code="en"
+    max-query-length="-1">
+    <df-messenger-chat chat-title="TestingAgent2"></df-messenger-chat>
+  </df-messenger>
 
-      @media screen and (max-width: 600px) {
-        df-messenger {
-          --df-messenger-font-size: 14px;
-        }
-      }
-    </style>
-
-    <!-- Load Web Component JS Last -->
-    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js" defer></script>
-  </body>
+  <!-- Dialogflow Chatbot JS -->
+  <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js" defer></script>
+</body>
 </html>
